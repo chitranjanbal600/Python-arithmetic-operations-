@@ -1,32 +1,57 @@
-# Arithmetic Operations in Python
+# Calculator in Python
 
-num1 = 12
-num2 = 12
+# Taking input from the user for the first number.
+# The input() function returns a string, so we convert
+num1 = int(input("Type here a first number : "))
 
-# Addition
-sum_result = num1 + num2
-print("Sum:", sum_result)
+# Taking input from the user for the second number.
+# Again, converting input string to integer.
+num2 =  int(input("Type here a second number : "))
 
-# Subtraction
-sub = num1 - num2
-print("Subtraction:", sub)
+# Taking input from the user for the operator
+# The operator is kept as a string, e.g., "+", "-", "*", "/", "%", "**", "//"
+Operator = input("Choose an operator (+, -, *, /, %, **, //): ")
 
-# Multiplication
-mul = num1 * num2
-print("Multiplication:", mul)
+# Using conditional statements to perform the correct operation based on the operator entered.
 
-# Division
-div = num1 / num2
-print("Division:", div)
+if Operator == "+":
+    # Addition operation.
+    print("Result:", num1 + num2)
 
-# Floor Division
-floor_division = num1 // num2
-print("Floor Division:", floor_division)
+elif Operator == "-":
+    # Subtraction operation.
+    print("Result:", num1 - num2)
 
-# Modulus
-mod = num1 % num2
-print("Modulus:", mod)
+elif Operator == "*":
+    # Multiplication oper.ation
+    print("Result:", num1 * num2)
 
-# Exponent
-exp = num1 ** num2
-print("Exponent:", exp)
+elif Operator == "/":
+    # Division operation.
+    # Check to make sure we are not dividing by zero.
+    if num2 != 0:
+        print("Result:", num1 / num2)  # Regular division (float result).
+    else:
+        print("Error: Division by zero is not allowed")
+
+elif Operator == "//":
+    # Floor division operation (division without remainder, returns integer).
+    if num2 != 0:
+        print("Result:", num1 // num2)
+    else:
+        print("Error: Division by zero is not allowed")
+
+elif Operator == "%":
+    # Modulus operation (returns the remainder of division).
+    if num2 != 0:
+        print("Result:", num1 % num2)
+    else:
+        print("Error: Division by zero is not allowed")
+
+elif Operator == "**":
+    # Exponentiation operation (Num1 raised to the power of Num2).
+    print("Result:", num1 ** num2)
+
+else:
+    # If the user enters an operator not listed above.
+    print("Invalid operator entered. Please choose a valid one.")
